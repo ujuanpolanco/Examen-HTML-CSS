@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrícula | Agencia de Conducción</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <main>
+        <section class="matricula" id="matricula" aria-labelledby="titulo-matricula">
+            <form class="formulario" action="#" method="post">
+                <header class="formulario__encabezado">
+                    <h1 id="titulo-matricula">Solicita tu matrícula</h1>
+                    <p>Déjanos tus datos y te contactaremos para iniciar tu curso de conducción.</p>
+                </header>
+
+                <div class="campo">
+                    <label for="nombre">Nombre completo</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ej. María Fernanda López" autocomplete="name" required>
+                </div>
+
+                <div class="campo">
+                    <label for="correo">Correo electrónico</label>
+                    <input type="email" id="correo" name="correo" placeholder="nombre@correo.com" autocomplete="email" required>
+                </div>
+
+                <div class="campo">
+                    <label for="telefono">Número de teléfono</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="3001234567" autocomplete="tel" inputmode="numeric" pattern="[0-9]{7,10}" title="Ingresa entre 7 y 10 dígitos, sin espacios ni símbolos" required>
+                </div>
+
+                <div class="campo">
+                    <label for="curso">Tipo de curso</label>
+                    <select id="curso" name="curso" required>
+                        <option value="" disabled selected>Selecciona un curso</option>
+                        <option value="carro">Carro</option>
+                        <option value="moto">Moto</option>
+                        <option value="mixto">Mixto</option>
+                    </select>
+                </div>
+
+                <div class="campo campo--completo">
+                    <label for="mensaje">Mensaje o comentario</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos tu horario preferido o cualquier duda" required></textarea>
+                </div>
+
+                <button type="submit" class="boton">Enviar solicitud</button>
+            </form>
+        </section>
+    </main>
+
+</body>
+</html>
