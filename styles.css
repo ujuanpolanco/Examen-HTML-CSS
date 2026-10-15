@@ -157,6 +157,45 @@ body {
     outline-offset: 3px;
 }
 
+/* ===== Aviso "Solicitud enviada" (solo CSS, con :target) ===== */
+.aviso {
+    position: fixed;
+    top: 1.5rem;
+    left: 50%;
+    z-index: 10;
+    padding: 0.9rem 1.75rem;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #1f9d63;
+    border-radius: var(--radio);
+    box-shadow: 0 12px 28px rgba(31, 157, 99, 0.35);
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, -20px);
+}
+
+.aviso:target {
+    animation: aviso 4.5s ease forwards;
+}
+
+@keyframes aviso {
+    0% {
+        opacity: 0;
+        visibility: visible;
+        transform: translate(-50%, -20px);
+    }
+    8%, 85% {
+        opacity: 1;
+        visibility: visible;
+        transform: translate(-50%, 0);
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+        transform: translate(-50%, -20px);
+    }
+}
+
 /* ===== Animación de entrada ===== */
 @keyframes entrada {
     from {
@@ -220,6 +259,14 @@ body {
 @media (prefers-reduced-motion: reduce) {
     .formulario {
         animation: none;
+    }
+
+    /* Sin animación el aviso se queda visible mientras sea el :target */
+    .aviso:target {
+        animation: none;
+        opacity: 1;
+        visibility: visible;
+        transform: translate(-50%, 0);
     }
 
     .boton,
